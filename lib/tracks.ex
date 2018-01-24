@@ -42,7 +42,7 @@ defmodule Tracks do
   # A Track is an array of points.
   #
 
-  def traverse(track, point_id, exit_index), do: traverse(track, point_id, exit_index, [point_id])
+  def traverse(track, point_id, exit_index), do: traverse(track, point_id, exit_index, MapSet.new([point_id]))
 
   def traverse(track, point_id, exit_index, visited_points) do
     {point, _} = List.keytake(track, point_id, 0)
